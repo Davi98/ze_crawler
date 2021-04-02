@@ -1,0 +1,6 @@
+pymongo
+pydantic
+lxml
+requests
+fake-useragent
+selenium
