@@ -61,6 +61,7 @@ class Beer:
     
     def select_best_price(self,data):
         best_choice = []
+        
         list_price = [x['price_per_liter'] for x in data]
         list_name = [x['product_name'] for x in data]
         for i in range(len(list_price)):
