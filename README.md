@@ -22,7 +22,7 @@ DEBUG=false BRAND=Marca_cerveja STREET=Nome_Rua NUMBER=Numero_endereco NEIGHBORH
 | --- | --- |
 | BRAND |  Marca da cerveja |
 | STREET | Nome da rua |
-| NUMBER |  Número do endereço |
+| NUMBER |  Número do endereco |
 | NEIGHBORHOOD | Bairro do endereco |
 | DEBUG | Ligar logs ou não |
 
