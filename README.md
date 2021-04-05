@@ -49,6 +49,25 @@ Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem d
 
 <br>
 
+### Exemplo de um retorno de anuncio:
+[{
+'brand': 'BRAHMA', 
+'product_name': 'Brahma Chopp 269ml', 
+'price': 1.87, 
+'price_per_liter': 6.95
+}]
+
+| Nome | Descrição |
+| --- | --- |
+| brand |  Marca da cerveja |
+| product_name | Nome do produto |
+| price |  Preço do produto |
+| price_per_liter | Preço do litro do produto |
+
+<br>
+
+
+
 ### Exemplo da reposta da marca BRAHMA:
 
 {"logger":"root","timestamp": "2021-04-05T18:04:08Z" , "level": "INFO", "message": "The best choice(s) is/are:"}
