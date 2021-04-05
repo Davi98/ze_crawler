@@ -13,8 +13,8 @@ class Browser:
         self.street_number = street_number
         self.neighborhood = neighborhood
         self.options = Options()
-        self.options.set_preference('geo.prompt.testing', True)
-        self.options.set_preference('geo.prompt.testing.allow', True)
+        # self.options.set_preference('geo.prompt.testing', True)
+        # self.options.set_preference('geo.prompt.testing.allow', True)
         # # self.options.add_argument('--headless')
         self.options.page_load_strategy = 'eager'
         self.driver = webdriver.Firefox(options=self.options)
@@ -40,33 +40,17 @@ class Browser:
             pass
         self.driver.find_element_by_id('age-gate-button-yes').click()
         time.sleep(2)
-        self.driver.find_element_by_id('fake-address-search-input').click()
-        time.sleep(3)
-        self.driver.find_element_by_class_name('css-1jrbali-textCard').click()
-        time.sleep(3)
-        self.driver.find_element_by_id('user-address-map-button-request-location').click()
+        self.driver.find_element_by_xpath('//*[@id="fake-address-search-input"]').click()
+        adress_bar = self.driver.find_element_by_xpath('//*[@id="address-search-input-address"]')
+        adress_bar.clear()
+        time.sleep(2)
+        adress_bar.send_keys(self.street_name  + self.street_number  + self.neighborhood)
         time.sleep(5)
-        self.driver.find_element_by_id('user-address-map-confirm-button').click()
-        time.sleep(3)
-        
-        street_name = self.driver.find_element_by_id('confirm-address-modal-input-street')
-        street_name.clear()
-        street_name.send_keys(self.street_name)
-        time.sleep(1)
-        
-        street_number = self.driver.find_element_by_id('confirm-address-modal-input-number')
-        street_number.clear()
-        street_number.send_keys(self.street_number)
-        time.sleep(1)
-        
-        neighborhood = self.driver.find_element_by_id('confirm-address-modal-input-neighborhood')
-        neighborhood.clear()
-        neighborhood.send_keys(self.neighborhood)
-        time.sleep(1)
-        
-        self.driver.find_element_by_id('confirm-address-modal-checkbox-without-complement').click()
-        time.sleep(1)
-        self.driver.find_element_by_id('confirm-address-modal-button-save-address').click()
+        self.driver.find_elements_by_class_name('css-10klw3m')[0].click()
+        time.sleep(2)
+        self.driver.find_element_by_class_name('css-e0qn0l-checkboxText').click()
+        time.sleep(5)
+        self.driver.find_element_by_id("address-details-button-continue").click()
         time.sleep(5)
         
         return True
