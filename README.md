@@ -28,24 +28,6 @@ DEBUG=false BRAND=Marca_cerveja STREET=Nome_Rua NUMBER=Numero_endereco NEIGHBORH
 
 <br>
 
-## Parametro BRAND : 
-<br>
-
-### Passando uma marca valida:
-Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem de uma marca específica, ele pode passar BRAND com os seguintes valores:
-
-| BRAND |
-| --- | 
-| BRAHMA | 
-| BUDWEISER |
-| ANTARTICA |
-| ORIGINAL | 
-| STELLA |
-| BECKS |
-| CORONA | 
-| BOHEMIA |
-| COLORADO |
-| ALL |
 
 <br>
 
@@ -66,6 +48,25 @@ Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem d
 
 <br>
 
+
+## Parametro BRAND : 
+<br>
+
+### Passando uma marca valida:
+Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem de uma marca específica, ele pode passar BRAND com os seguintes valores:
+
+| BRAND |
+| --- | 
+| BRAHMA | 
+| BUDWEISER |
+| ANTARTICA |
+| ORIGINAL | 
+| STELLA |
+| BECKS |
+| CORONA | 
+| BOHEMIA |
+| COLORADO |
+| ALL |
 
 
 ### Exemplo da reposta da marca BRAHMA:
