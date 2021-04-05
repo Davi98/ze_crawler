@@ -67,7 +67,7 @@ Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem d
 <br>
 
 ### Não passar BRAND ou passar BRAND=ALL
-O usuário pode escolher ou não passar uma marca de cerveja, caso não passe, o crawler irá definir BRAND=ALL e portanto vai crawlear as marcas e listar em ordem(da mais barata até a mais cara) a melhor escolha de cada uma. 
+O usuário pode escolher ou não passar uma marca de cerveja, caso não passe, o crawler irá definir BRAND=ALL e irá crawlear todas as marcas e listar ordenando do litro mais barato para o mais caro dentre todas as marcas.
 
 <br>
 

@@ -14,7 +14,7 @@ class Browser:
         self.street_number = street_number
         self.neighborhood = neighborhood
         self.options = Options()
-        # self.options.add_argument('--headless')
+        self.options.add_argument('--headless')
         self.options.page_load_strategy = 'eager'
         self.driver = webdriver.Firefox(options=self.options)
         self.session_id = self.driver.session_id
