@@ -7,10 +7,8 @@ import os
 
 def run():
     try:
-        street_name = os.environ['STREET'] if 'STREET' in os.environ else 'Rua Moura Brasil'
-        street_number = os.environ['NUMBER'] if 'NUMBER' in os.environ else '60'
-        neighborhood = os.environ['NEIGHBORHOOD'] if 'NEIGHBORHOOD' in os.environ else 'Laranjeiras'
-        browser = Browser(street_name,street_number,neighborhood)
+
+        browser = Browser(os.environ['STREET', os.environ['NUMBER'],os.environ['NEIGHBORHOOD'])
         
         brand_name = os.environ['BRAND'] if 'BRAND' in os.environ else 'ALL'
         
