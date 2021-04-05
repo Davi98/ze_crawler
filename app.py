@@ -2,20 +2,22 @@ from datetime import datetime
 from log import log
 from src.browser.Browser import Browser
 from src.Beer import Beer
-from src.Location import Location
 from src.BrandFactory import BrandFactory
 import os
 
 def run():
     try:
         street_name = os.environ['STREET'] if 'STREET' in os.environ else 'Rua Moura Brasil'
-        zip_code = os.environ['ZIP_CODE'] if 'ZIP_CODE' in os.environ else '22231200'
-        location = Location(street_name,zip_code)
-        latitude,logitude = location.get_lat_log()
+        street_number = os.environ['NUMBER'] if 'NUMBER' in os.environ else '60'
+        neighborhood = os.environ['NEIGHBORHOOD'] if 'NEIGHBORHOOD' in os.environ else 'Laranjeiras'
+        
+        
+        browser = Browser(street_name,street_number,neighborhood)
+        
         brand_name = os.environ['BRAND'] if 'BRAND' in os.environ else 'ALL'
-        browser = Browser(latitude,logitude)
         brand = BrandFactory(browser,brand_name)
         beer = brand.brand_selector()
+        
         if beer.brand == "ALL":
             data = beer.crawl_all()
             best_choices = beer.select_best_prices(data)

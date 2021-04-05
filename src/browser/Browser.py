@@ -8,18 +8,14 @@ import json
 
 class Browser:
 
-    def __init__(self,latitude,logitude):
+    def __init__(self,street_name,street_number,neighborhood):
+        self.street_name = street_name
+        self.street_number = street_number
+        self.neighborhood = neighborhood
         self.options = Options()
         self.options.set_preference('geo.prompt.testing', True)
         self.options.set_preference('geo.prompt.testing.allow', True)
-        location_dict = {
-        "location": {"lat": float(latitude), "lng": float(logitude)},
-        "accuracy": 100.0
-        }
-        location_json = json.dumps(location_dict)
-        location_config = f'data:application/json,{location_json}'
-        self.options.set_preference('geo.provider.network.url',location_config)
-        # self.options.add_argument('--headless')
+        # # self.options.add_argument('--headless')
         self.options.page_load_strategy = 'eager'
         self.driver = webdriver.Firefox(options=self.options)
         self.session_id = self.driver.session_id
@@ -51,7 +47,23 @@ class Browser:
         self.driver.find_element_by_id('user-address-map-button-request-location').click()
         time.sleep(5)
         self.driver.find_element_by_id('user-address-map-confirm-button').click()
-        time.sleep(5)
+        time.sleep(3)
+        
+        street_name = self.driver.find_element_by_id('confirm-address-modal-input-street')
+        street_name.clear()
+        street_name.send_keys(self.street_name)
+        time.sleep(1)
+        
+        street_number = self.driver.find_element_by_id('confirm-address-modal-input-number')
+        street_number.clear()
+        street_number.send_keys(self.street_number)
+        time.sleep(1)
+        
+        neighborhood = self.driver.find_element_by_id('confirm-address-modal-input-neighborhood')
+        neighborhood.clear()
+        neighborhood.send_keys(self.neighborhood)
+        time.sleep(1)
+        
         self.driver.find_element_by_id('confirm-address-modal-checkbox-without-complement').click()
         time.sleep(1)
         self.driver.find_element_by_id('confirm-address-modal-button-save-address').click()
