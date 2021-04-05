@@ -1,5 +1,5 @@
 # Crawler do Zé
-É um script que crawleia os anuncios de diferentes marcas de cerveja do Zé delivery e retorna para o usuário qual é o produto melhor custo beneficio de acordo com o preço do litro da embalagem. O crawler é configurado para crawlear os anuncios de acordo com o endereço passado pelo usuário na execução do script.
+É um script que crawleia os anuncios de diferentes marcas de cerveja do Zé delivery e retorna para o usuário qual é o produto melhor custo beneficio de acordo com o preço do litro da embalagem. O crawler é configurado para assimilar os anuncios de acordo com o endereço passado pelo usuário na execução do script.
 
 
 ## Tecnologia utilizada
