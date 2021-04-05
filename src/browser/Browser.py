@@ -3,17 +3,22 @@ import re
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
-
+import json
 
 
 class Browser:
 
-    def __init__(self):
-
+    def __init__(self,latitude,logitude):
         self.options = Options()
         self.options.set_preference('geo.prompt.testing', True)
         self.options.set_preference('geo.prompt.testing.allow', True)
-        self.options.set_preference('geo.provider.network.url','data:application/json,{"location": {"lat": -22.9355907, "lng": -43.1851476}, "accuracy": 100.0}')
+        location_dict = {
+        "location": {"lat": float(latitude), "lng": float(logitude)},
+        "accuracy": 100.0
+        }
+        location_json = json.dumps(location_dict)
+        location_config = f'data:application/json,{location_json}'
+        self.options.set_preference('geo.provider.network.url',location_config)
         # self.options.add_argument('--headless')
         self.options.page_load_strategy = 'eager'
         self.driver = webdriver.Firefox(options=self.options)

@@ -2,6 +2,7 @@ from datetime import datetime
 from log import log
 from src.browser.Browser import Browser
 import re
+from operator import itemgetter
 
 
 class Beer:
@@ -79,7 +80,7 @@ class Beer:
     def select_best_prices(self,data):
         best_choices = []
         for i in data:
-            best_choices.append(self.select_best_price(i))
+            best_choices.extend(self.select_best_price(i))
         
         return best_choices
 
@@ -95,10 +96,12 @@ class Beer:
                     "brand" : data[0]['brand'],
                     "product_name": list_name[i],
                     "price" : list_price[i],
-                    "liter_price": list_liter_price[i]
+                    "price_per_liter": list_liter_price[i]
                 }
                 best_choices.append(choice)
         
         return best_choices
-
-
+    
+    def select_best_prices_in_order(self,data):
+        list_sorted = sorted(data, key=itemgetter('price_per_liter'), reverse=False)
+        return list_sorted
