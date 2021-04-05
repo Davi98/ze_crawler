@@ -1,6 +1,6 @@
 from datetime import datetime
 from log import log
-from src.browser.Browser import Browser
+from src.Browser import Browser
 import re
 from operator import itemgetter
 
