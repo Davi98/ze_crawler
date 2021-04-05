@@ -13,9 +13,7 @@ class Browser:
         self.street_number = street_number
         self.neighborhood = neighborhood
         self.options = Options()
-        # self.options.set_preference('geo.prompt.testing', True)
-        # self.options.set_preference('geo.prompt.testing.allow', True)
-        # # self.options.add_argument('--headless')
+        # self.options.add_argument('--headless')
         self.options.page_load_strategy = 'eager'
         self.driver = webdriver.Firefox(options=self.options)
         self.session_id = self.driver.session_id
@@ -32,7 +30,7 @@ class Browser:
 
     def config_location(self):
         self.driver.get("https://www.ze.delivery/")
-        time.sleep(5)
+        time.sleep(3)
         try:
             self.driver.find_element_by_class_name('accept-cookie-container').click()
             time.sleep(1)
@@ -45,7 +43,7 @@ class Browser:
         adress_bar.clear()
         time.sleep(2)
         adress_bar.send_keys(self.street_name  + self.street_number  + self.neighborhood)
-        time.sleep(5)
+        time.sleep(3)
         self.driver.find_elements_by_class_name('css-10klw3m')[0].click()
         time.sleep(2)
         self.driver.find_element_by_class_name('css-e0qn0l-checkboxText').click()

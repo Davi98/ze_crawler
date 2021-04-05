@@ -23,6 +23,7 @@ def run():
             best_choices = beer.select_best_prices(data)
             best_choices_in_order = beer.select_best_prices_in_order(best_choices)
             log().info("The complete list of prices in order is:")
+            print("\n")
             for i in (range(len(best_choices_in_order))):
                 log().info(f"{i}:{best_choices_in_order[i]}")
                 print("\n")
