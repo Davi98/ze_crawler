@@ -1,8 +1,7 @@
 import time
 import re
 from log import log
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import json
 
@@ -15,8 +14,11 @@ class Browser:
         self.neighborhood = neighborhood
         self.options = Options()
         self.options.add_argument('--headless')
-        self.options.page_load_strategy = 'eager'
-        self.driver = webdriver.Firefox(options=self.options)
+        self.options.add_argument('--disable-gpu')
+        self.options.add_argument('--disable-dev-shm-usage')
+        self.options.add_argument('--disable-extensions')
+        self.options.add_argument('--no-sandbox')
+        self.driver = webdriver.Chrome(options=self.options)
         self.session_id = self.driver.session_id
         self.command_executor_url = self.driver.command_executor._url
     
@@ -58,7 +60,7 @@ class Browser:
             self.driver.find_element_by_class_name('css-e0qn0l-checkboxText').click()
             time.sleep(5)
             self.driver.find_element_by_id("address-details-button-continue").click()
-            time.sleep(5)
+            time.sleep(7)
             
             return True
         
