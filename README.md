@@ -1,5 +1,5 @@
-# Crawler Zé
-É um script que crawleia os anuncios de diferentes marcas de cerveja do Zé delivery e retorna para o usuário qual produto é mais custo beneficio de acordo com o preço do litro da embalagem. O crawler é configurado para crawlear os anuncios de acordo com o endereço passado pelo usuário na execução do script 
+# Crawler do Zé
+É um script que crawleia os anuncios de diferentes marcas de cerveja do Zé delivery e retorna para o usuário qual é o produto de melhor custo beneficio de acordo com o preço do litro da embalagem. O crawler é configurado para assimilar os anuncios de acordo com o endereço passado pelo usuário na execução do script.
 
 
 ## Tecnologia utilizada
@@ -22,30 +22,12 @@ DEBUG=false BRAND=Marca_cerveja STREET=Nome_Rua NUMBER=Numero_endereco NEIGHBORH
 | --- | --- |
 | BRAND |  Marca da cerveja |
 | STREET | Nome da rua |
-| NUMBER |  Número do endereço |
+| NUMBER |  Número do endereco |
 | NEIGHBORHOOD | Bairro do endereco |
-| DEBUG | Ligar logs ou não |
+| DEBUG | Configurar logs |
 
 <br>
 
-## Parametro BRAND : 
-<br>
-
-### Passando uma marca valida:
-Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem de uma marca específica, ele pode passar BRAND com os seguintes valores:
-
-| BRAND |
-| --- | 
-| BRAHMA | 
-| BUDWEISER |
-| ANTARTICA |
-| ORIGINAL | 
-| STELLA |
-| BECKS |
-| CORONA | 
-| BOHEMIA |
-| COLORADO |
-| ALL |
 
 <br>
 
@@ -66,6 +48,25 @@ Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem d
 
 <br>
 
+
+## Parametro BRAND : 
+<br>
+
+### Passando uma marca valida:
+Caso o usuário queira ver qual a melhor escolha e a melhor ordem de embalagem de uma marca específica, ele pode passar BRAND com os seguintes valores:
+
+| BRAND |
+| --- | 
+| BRAHMA | 
+| BUDWEISER |
+| ANTARTICA |
+| ORIGINAL | 
+| STELLA |
+| BECKS |
+| CORONA | 
+| BOHEMIA |
+| COLORADO |
+| ALL |
 
 
 ### Exemplo da reposta da marca BRAHMA:
