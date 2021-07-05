@@ -3,6 +3,7 @@ import re
 from log import log
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import json
 
 
@@ -18,7 +19,7 @@ class Browser:
         self.options.add_argument('--disable-dev-shm-usage')
         self.options.add_argument('--disable-extensions')
         self.options.add_argument('--no-sandbox')
-        self.driver = webdriver.Chrome(options=self.options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=self.options)
         self.session_id = self.driver.session_id
         self.command_executor_url = self.driver.command_executor._url
     
