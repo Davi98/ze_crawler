@@ -48,8 +48,6 @@ class Browser:
                 time.sleep(1)
             except:
                 pass
-            self.driver.find_element_by_id('age-gate-button-yes').click()
-            time.sleep(2)
             self.driver.find_element_by_xpath('//*[@id="fake-address-search-input"]').click()
             adress_bar = self.driver.find_element_by_xpath('//*[@id="address-search-input-address"]')
             adress_bar.clear()
