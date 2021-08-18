@@ -44,12 +44,10 @@ class Browser:
             self.driver.get("https://www.ze.delivery/")
             time.sleep(3)
             try:
-                self.driver.find_element_by_class_name('accept-cookie-container').click()
+                self.driver.find_element_by_id('onetrust-accept-btn-handler').click()
                 time.sleep(1)
             except:
                 pass
-            self.driver.find_element_by_id('age-gate-button-yes').click()
-            time.sleep(2)
             self.driver.find_element_by_xpath('//*[@id="fake-address-search-input"]').click()
             adress_bar = self.driver.find_element_by_xpath('//*[@id="address-search-input-address"]')
             adress_bar.clear()
