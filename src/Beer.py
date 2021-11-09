@@ -45,7 +45,10 @@ class Beer:
         return price[0]
 
     def get_volume(self,description):
-        volume = int(re.findall(r'\d+', description.text)[0])
+        if "Combo" in description.text:
+            volume = 1
+        else:
+            volume = int(re.findall(r'\d+', description.text)[0])
         return volume
     
     def get_price_per_liter(self,price,volume):

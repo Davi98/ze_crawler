@@ -9,6 +9,7 @@ dist/
 .vscode/
 __pycache__
 venv/
+env
 
 # Compiled Java class files
 *.class
